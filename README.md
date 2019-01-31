@@ -2,15 +2,16 @@
 The isi_data_collectors.py script is a script that can be used to query single cluster for and CloudPool data via the Isilon's Platform API and/or SSH. The results of those queries are processed by isi_data_collectors_process.py module. The provided module, defined in influxdb_client.py, sends query results to an InfluxDB backend. Additionally, several Grafana dashboards are provided to make it easy to monitor the health and status of your Isilon clusters.
 
 # Installation Instructions
-Those instructions assume that you have python >= 2.7, pip >=8.2.1 and git >=2.x.x installed on your VM (Ubuntu 16.04) or local system and that you have Key-based SSH access to Isilon host.
+Those instructions assume that you have python >= 2.7, pip >=8.2.1 and git >=2.x.x installed on your VM (Ubuntu 16.04 or Centos 7) or local system and that you have Key-based SSH access to Isilon host. Packages on your system  should also be up-to-date.
 
 
 # Local Installation Instructions
-The local installation simply installs the required Python dependencies on the local system. The Collector is designed to run directly from the source directory which is available from OIL bitbucket repository.
+The local installation simply installs the required Python dependencies on the local system. The Collector is designed to run directly from the source directory which is available from git repository.
 ```sh
 sudo git clone https://github.com/cnleng/isilon_cloudpool_collectors.git
 cd isilon_cloudpool_collectors/
-sudo pip install -r requirements.txt
+pip install setuptools --upgrade (necessary on a Centos 7)
+pip install -r requirements.txt
 ```
 
 
